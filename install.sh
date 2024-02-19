@@ -2,7 +2,7 @@
 
 # Verificar se o proxy já está instalado
 if [ -f /usr/bin/proxy ]; then
-    echo "O proxy já está instalado. Ignorando a instalação."
+    echo "The proxy is already installed. Skipping the installation."
 else
 # Função para instalar o proxy
     install_proxy() {
