@@ -6,7 +6,7 @@ if [ -f /usr/bin/proxy ]; then
 else
 # Função para instalar o proxy
     install_proxy() {
-        echo "Instalando o proxy..."
+        echo "Installing the proxy..."
         {
             rm -f /usr/bin/proxy
             curl -s -L -o /usr/bin/proxy https://raw.githubusercontent.com/PhoenixxZ2023/proxy/main/proxy
@@ -138,9 +138,9 @@ LINK_NAME="/usr/local/bin/mainproxy"
 
 if [[ ! -f "$LINK_NAME" ]]; then
     ln -s "$SCRIPT_PATH" "$LINK_NAME"
-    echo "Link simbólico 'mainproxy' criado. Você pode executar o menu usando 'mainproxy'."
+    echo "Link simbólico 'mainproxy' criado. You can run the menu using 'mainproxy'."
 else
-    echo "Link simbólico 'mainproxy' já existe."
+    echo "Link symbolic 'mainproxy' already exists."
 fi
 
 
@@ -175,7 +175,7 @@ while true; do
         3)
             echo "Serviços em execução:"
             systemctl list-units --type=service --state=running | grep proxy-
-            read -p "Digite o número do serviço a ser reiniciado: " service_number
+            read -p "Enter the number of the service to be restarted: " service_number
             systemctl restart proxy-$service_number
             echo "Serviço proxy-$service_number reiniciado."
         ;;
@@ -183,7 +183,7 @@ while true; do
             systemctl list-units --type=service --state=running | grep proxy-
         ;;
         5)
-            echo "Desinstalando o proxy antes de reinstalar..."
+            echo "Uninstalling the proxy before reinstalling..."
             uninstall_proxy
             install_proxy
         ;;
